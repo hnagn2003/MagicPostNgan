@@ -87,6 +87,8 @@ export default function Order({
 				</Link>
 			) : null}
 			<Form
+				// handleSubmit={() => handleSubmit({ ...order, ...newOrder })}
+				// className="w-full gap-4 lg:grid lg:grid-cols-2 flex flex-col"
 				handleSubmit={() => handleSubmit(newOrder)}
 				className="w-full gap-4 lg:grid flex flex-col"
 			>
