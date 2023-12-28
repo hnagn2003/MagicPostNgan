@@ -19,7 +19,7 @@ export default function MenuItem({
 	return (
 		<li onClick={() => setCollapsed(true)}>
 			<Link href={path}>
-				{icon ? <FontAwesomeIcon icon={icon} className={subitem === false ? "btn" : "w-3"} /> : null}
+				{icon ? <FontAwesomeIcon icon={icon} className={subitem === false ? "bg-base-0 hover:bg-base-100" : "w-3"} /> : null}
 				{label}
 			</Link>
 		</li>
