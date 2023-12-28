@@ -5,10 +5,12 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import Avatar from "./Avatar";
-import Toggle from "./Toggle";
 import './headerStyles.css';
 import SubMenu from "../Nav/SubMenu";
 import MenuItem from "../Nav/MenuItem";
+import Toggle from "./Toggle";
+import SearchBar from "./SearchBar";
+
 import {
 	faFolderPlus,
 	faListCheck,
@@ -19,6 +21,7 @@ import {
 	IconDefinition,
 	faClockRotateLeft,
 } from "@fortawesome/free-solid-svg-icons";
+
 export default function Header({ onToggle }: { onToggle: () => void }) {
 	const router = useRouter();
 	const handleLogout = async () => {
@@ -66,7 +69,6 @@ export default function Header({ onToggle }: { onToggle: () => void }) {
 
 	return (
 		<header className="p-4 h-16 pr-6 md:gap-6 gap-4 flex flex-row items-center justify-between z-[30] fixed w-full custom-header">
-			{/* <Toggle onToggle={onToggle} /> */}
 			<picture>
 				<source media="(max-width: 500px)" srcSet="/logo_sqrt_notext_crop.png" />
 				<Image
@@ -77,25 +79,10 @@ export default function Header({ onToggle }: { onToggle: () => void }) {
 					className="md:w-28 w-28 h-auto"
 				/>
 			</picture>
-			{/* <div className="h-5 w-5">
-				<ul className="menu bg-base-200 lg:menu-horizontal rounded-box">
-					<MenuItem label="Dashboard" path="/staff" />
-				</ul>
-				<ul className="menu bg-base-200 lg:menu-horizontal rounded-box">
-					<li>
-					<SubMenu label="Orders">{orderItems}</SubMenu>
-					</li>
-				</ul>
-				<ul className="menu bg-base-200 lg:menu-horizontal rounded-box">
-					<SubMenu label="Deliveries">{deliveryItems}</SubMenu>
-				</ul>
-				<ul className="menu bg-base-200 lg:menu-horizontal rounded-box">
-					<SubMenu label="Management">{managementItems}</SubMenu>
-				</ul>
-			</div> */}
+			<Toggle onToggle={onToggle} />
 			<ul className="menu xl:menu-horizontal  lg:min-w-max bg-base-100 rounded-box h-16">
 					<div className="btn bg-base-300 hover:bg-base-100">
-					<MenuItem label="Dashboard" path="/staff" subitem={false} />
+					<MenuItem label="Dashboard" path="/staff/dashboard" subitem={false} />
 					</div>
 					<SubMenu label="Orders">{orderItems}</SubMenu>
 
@@ -114,6 +101,7 @@ export default function Header({ onToggle }: { onToggle: () => void }) {
 				</div>
 			</div>
 			<FontAwesomeIcon icon={faBell} className=" ml-auto h-4" />
+			<SearchBar />
 			<Avatar src="/default_avatar.png" />
 			<button onClick={handleLogout}>
 				<FontAwesomeIcon icon={faDoorOpen} className="h-4" />
