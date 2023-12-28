@@ -3,9 +3,6 @@ import Select from "@/components/Form/Select";
 import TextInput from "@/components/Form/TextInput";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { StaffStateProps } from "../../../utils/staffs";
-import { UserOutlined } from '@ant-design/icons';
-import { MailOutlined } from '@ant-design/icons';
-import { PhoneOutlined } from '@ant-design/icons';
 
 const roles = [
 	{
@@ -65,7 +62,6 @@ export default function StaffFieldSet({
 				name="name"
 				value={state.name.value}
 				handleChange={(name: string) => state.name.handleChange(name)}
-				prefix={<UserOutlined />}
 			/>
 			<TextInput
 				label="Username"
@@ -76,7 +72,6 @@ export default function StaffFieldSet({
 				handleChange={(username: string) =>
 					state.username.handleChange(username)
 				}
-				prefix={<UserOutlined />}
 			/>
 			<TextInput
 				label="Email"
@@ -85,7 +80,6 @@ export default function StaffFieldSet({
 				name="email"
 				value={state.email.value}
 				handleChange={(email: string) => state.email.handleChange(email)}
-				prefix={<MailOutlined />}
 			/>
 			<TextInput
 				label="Phone number"
@@ -96,7 +90,6 @@ export default function StaffFieldSet({
 				handleChange={(phoneNumber: string) =>
 					state.phoneNumber.handleChange(phoneNumber)
 				}
-				prefix={<PhoneOutlined />}
 			/>
 		</Fieldset>
 	);

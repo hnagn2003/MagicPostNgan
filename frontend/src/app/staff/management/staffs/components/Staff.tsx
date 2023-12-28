@@ -34,30 +34,17 @@ export default function Staff({
 
 	return (
 		<Form
-			handleSubmit={() =>
-				handleSubmit(staff ? { ...staff, ...newStaff } : newStaff)
-			}
+			handleSubmit={() => handleSubmit(newStaff)}
 			className="w-full gap-4 flex flex-col"
 		>
-			<StaffFieldSet state={state} disabled={!editable} editView={!!staff} />
-			<StaffAssignPointField state={state} disabled={!editable || !!staff} />
-			{editable ? (
-				<div className="flex flex-row gap-4">
-					<PrimaryButton type="submit">
-						{staff ? "Save changes" : "Confirm"}
-					</PrimaryButton>
-					<SecondaryButton
-						type="reset"
-						handleClick={
-							staff
-								? () => router.push("/staff/management/staffs")
-								: () => state.resetStaff()
-						}
-					>
-						{staff ? "Cancel" : "Reset"}
-					</SecondaryButton>
-				</div>
-			) : null}
+			<StaffFieldSet state={state} />
+			<StaffAssignPointField state={state} />
+			<div className="flex flex-row gap-4">
+				<PrimaryButton type="submit">Confirm</PrimaryButton>
+				<SecondaryButton type="reset" handleClick={() => state.resetStaff()}>
+					Reset
+				</SecondaryButton>
+			</div>
 		</Form>
 	);
 }
