@@ -44,7 +44,8 @@ export default function Menu() {
 
 	return (
 		<ul className="menu w-full rounded-box">
-			<MenuItem label="Dashboard" path="/staff" />
+			<div className="btn bg-base-0 w-100">
+			<MenuItem label="Dashboard" path="/staff" /></div>
 			<SubMenu label="Orders">{orderItems}</SubMenu>
 			<SubMenu label="Deliveries">{deliveryItems}</SubMenu>
 			<SubMenu label="Management">{managementItems}</SubMenu>

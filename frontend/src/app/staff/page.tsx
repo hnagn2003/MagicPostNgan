@@ -169,7 +169,7 @@ export default function Page() {
                                 </div>        
 
 			<div className="pt-4">
-				<div className="flex flex-col sm:flex-row sm:items-end w-full">
+				<div className=" flex flex-col sm:flex-row sm:items-end w-full">
 					<Title>Dashboard</Title>
 					<div className="w-full sm:w-fit flex flex-row items-end mb-4 ml-auto">
 						<AddressInput

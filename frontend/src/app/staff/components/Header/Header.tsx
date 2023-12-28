@@ -93,8 +93,8 @@ export default function Header({ onToggle }: { onToggle: () => void }) {
 					<SubMenu label="Management">{managementItems}</SubMenu>
 				</ul>
 			</div> */}
-			<ul className="menu xl:menu-horizontal  lg:min-w-max bg-base-200 rounded-box h-16">
-					<MenuItem label="Dashboard" path="/staff" />
+			<ul className=" btn menu xl:menu-horizontal  lg:min-w-max bg-base-200 rounded-box h-16">
+					<MenuItem label="Dashboard" path="/staff" subitem={false} />
 
 					<SubMenu label="Orders">{orderItems}</SubMenu>
 
