@@ -92,8 +92,9 @@ export default function AddressInput({
 				<div
 					className={`flex ${
 						rowLayoutOnSmallView ? "flex-row" : "flex-col"
-					} sm:flex-row gap-4`}
+					} sm:flex-row gap-4`} 
 				>
+					
 					<AddressAutoComplete
 						label="Province"
 						placeholder="Province"

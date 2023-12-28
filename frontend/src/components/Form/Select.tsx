@@ -11,7 +11,7 @@ export default function Select({
 	options,
 	value = "",
 	handleChange,
-	flexDirection = "col",
+	flexDirection = "row",
 }: {
 	label: string;
 	name: string;

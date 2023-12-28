@@ -32,10 +32,14 @@ export default function Staff({
 	return (
 		<Form
 			handleSubmit={() => handleSubmit(newStaff)}
-			className="w-full gap-4 flex flex-col"
+			className="w-full gap-4 lg:grid flex flex-col" //flex-col
 		>
-			<StaffFieldSet state={state} />
-			<StaffAssignPointField state={state} />
+			<div className="flex flex-row gap-4">
+				<StaffFieldSet state={state} />
+				<StaffAssignPointField state={state} />
+			</div>
+			{/* <StaffFieldSet state={state} />
+			<StaffAssignPointField state={state} /> */}
 			<div className="flex flex-row gap-4">
 				<PrimaryButton type="submit">Confirm</PrimaryButton>
 				<SecondaryButton type="reset" handleClick={() => state.resetStaff()}>
