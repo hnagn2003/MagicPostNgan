@@ -6,17 +6,17 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 export default function StaffAssignPointField({
 	state,
-	// disabled = false,
+	disabled = false,
 }: {
 	state: CreateStaffStateProps;
-	// disabled: boolean;
+	disabled: boolean;
 }) {
 	return (
 		<Fieldset
 			legend="Staff Point Assignment"
 			icon={faLocationDot}
 			className="sm:flex-col"
-			// disabled={disabled}
+			disabled={disabled}
 		>
 			<AddressInput
 				className="flex-1"

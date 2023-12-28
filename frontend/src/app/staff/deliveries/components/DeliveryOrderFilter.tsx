@@ -20,20 +20,25 @@ export default function DeliveryOrderFilter({
 }) {
 	return (
 		<FilterFieldset
-			className="md:grid md:grid-cols-4 gap-2 flex flex-col text-sm"
+			className="md:grid md:grid-rows-4 gap-2 flex flex-col text-sm"
 			handleConfirm={handleConfirm}
 		>
-			<AddressInput
-				className="col-span-3"
-				handleChange={(address) =>
-					setPointFilter({ ...pointFilter, ...address })
-				}
-				value={pointFilter}
-				includeSpecificAddress={false}
-			/>
-			<div className="col-span-1">
-				<TimeRangeFilter {...{ timeRange, setTimeRange }} />
-			</div>{" "}
+			<div className="flex flex-col gap-4 ">
+				<AddressInput
+					
+					handleChange={(address) =>
+						setPointFilter({ ...pointFilter, ...address })
+					}
+					value={pointFilter}
+					includeSpecificAddress={false}
+				/>
+
+				<div >
+					<TimeRangeFilter {...{ timeRange, setTimeRange }} />
+				</div>{" "}
+
+			</div>
+
 		</FilterFieldset>
 	);
 }

@@ -32,7 +32,7 @@ async function filterOutgoingOrders(
 
 	return fetch(
 		`${process.env.NEXT_PUBLIC_ORDER_ENDPOINT}/getOutgoingOrders?` +
-			new URLSearchParams(filter),
+		new URLSearchParams(filter),
 		{
 			credentials: "include",
 		}
@@ -77,67 +77,74 @@ export default function OutgoingOrderTable() {
 
 	if (error) toast.error(error.message);
 	return (
-		<div className="flex flex-col gap-4">
-			<DeliveryOrderFilter
-				{...{ pointFilter, setPointFilter, timeRange, setTimeRange }}
-				handleConfirm={() => setFilterToggle(!filterToggle)}
-			/>
-			<Actions
-				selectAll={selectAll}
-				onSelectAll={() => {
-					setSelectAll(!selectAll);
-					!selectAll
-						? setSelectedOrders(
+		<div className="flex flex-row gap-4">
+			<div className="flex-grow-1" >
+				<DeliveryOrderFilter
+					{...{ pointFilter, setPointFilter, timeRange, setTimeRange }}
+					handleConfirm={() => setFilterToggle(!filterToggle)}
+				/>
+			</div>
+
+			<div className="flex flex-col gap-4 flex-grow-3">
+
+				<Actions
+					selectAll={selectAll}
+					onSelectAll={() => {
+						setSelectAll(!selectAll);
+						!selectAll
+							? setSelectedOrders(
 								data.data.data.map((order: any) => order.id as string)
-						  )
-						: setSelectedOrders([]);
-				}}
-				selected={!!selectedOrders.length}
-				rejectReason={rejectReason}
-				setRejectReason={setRejectReason}
-				onConfirm={() => confirmOrders(selectedOrders, "outgoing")}
-				onReject={() => rejectOrders(selectedOrders, rejectReason, "outgoing")}
-			/>
-			<Table columnHeadings={["", "ID", "Arrived At", "Next Point"]}>
-				{data?.data.data.map(
-					({
-						id,
-						to,
-						arrivedAt,
-					}: {
-						id: string;
-						to: string;
-						arrivedAt: string;
-					}) => {
-						const selected =
-							selectedOrders.findIndex((selectedId) => selectedId === id) !==
-							-1;
-						const onChange = () => {
-							const index = selectedOrders.findIndex(
-								(selectedId) => selectedId === id
-							);
-							if (index === -1) {
-								setSelectedOrders([...selectedOrders, id as string]);
-							} else {
-								setSelectedOrders(
-									selectedOrders.filter((selectedId) => selectedId !== id)
+							)
+							: setSelectedOrders([]);
+					}}
+					selected={!!selectedOrders.length}
+					rejectReason={rejectReason}
+					setRejectReason={setRejectReason}
+					onConfirm={() => confirmOrders(selectedOrders, "outgoing")}
+					onReject={() => rejectOrders(selectedOrders, rejectReason, "outgoing")}
+				/>
+				<Table columnHeadings={["", "ID", "Arrived At", "Next Point"]}>
+					{data?.data.data.map(
+						({
+							id,
+							to,
+							arrivedAt,
+						}: {
+							id: string;
+							to: string;
+							arrivedAt: string;
+						}) => {
+							const selected =
+								selectedOrders.findIndex((selectedId) => selectedId === id) !==
+								-1;
+							const onChange = () => {
+								const index = selectedOrders.findIndex(
+									(selectedId) => selectedId === id
 								);
-							}
-						};
-						return (
-							<OutgoingOrderSummary
-								key={id}
-								{...{ id, to, arrivedAt, selected, onChange }}
-							/>
-						);
-					}
-				)}
-			</Table>
-			<Pagination
-				numberOfPages={data?.data.totalPage || 1}
-				setPageNumber={setPageNumber}
-				pageNumber={pageNumber}
-			/>
+								if (index === -1) {
+									setSelectedOrders([...selectedOrders, id as string]);
+								} else {
+									setSelectedOrders(
+										selectedOrders.filter((selectedId) => selectedId !== id)
+									);
+								}
+							};
+							return (
+								<OutgoingOrderSummary
+									key={id}
+									{...{ id, to, arrivedAt, selected, onChange }}
+								/>
+							);
+						}
+					)}
+				</Table>
+				<Pagination
+					numberOfPages={data?.data.totalPage || 1}
+					setPageNumber={setPageNumber}
+					pageNumber={pageNumber}
+				/>
+			</div>
+
 		</div>
 	);
 }

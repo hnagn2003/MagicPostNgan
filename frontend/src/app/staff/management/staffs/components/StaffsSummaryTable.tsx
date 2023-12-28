@@ -91,7 +91,7 @@ export default function StaffsSummaryTable() {
 	if (error) toast.error(error.message);
 
 	return (
-		<div className="flex flex-col items-center gap-4">
+		<div className="flex flex-row items-center gap-4">
 			<SummaryTable
 				items={staffs}
 				columnHeadings={columnHeadings}

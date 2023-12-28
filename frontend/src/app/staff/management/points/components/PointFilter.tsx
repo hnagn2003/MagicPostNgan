@@ -31,10 +31,10 @@ export default function PointFilter({
 	return (
 		<FilterFieldset
 			handleConfirm={handleConfirm}
-			className="md:grid md:grid-cols-4 gap-2 flex flex-col w-full text-sm"
+			className="md:grid md:grid-cols-1 gap-2 flex flex-col w-full text-sm"
 		>
 			<AddressInput
-				className="col-span-3"
+				// className="row-span-1"
 				includeSpecificAddress={false}
 				value={pointFilter}
 				handleChange={(address) =>

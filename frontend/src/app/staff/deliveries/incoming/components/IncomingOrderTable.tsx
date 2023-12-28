@@ -32,7 +32,7 @@ async function filterIncomingOrders(
 
 	return fetch(
 		`${process.env.NEXT_PUBLIC_ORDER_ENDPOINT}/getIncomingOrders?` +
-			new URLSearchParams(filter),
+		new URLSearchParams(filter),
 		{
 			credentials: "include",
 		}
@@ -78,8 +78,8 @@ export default function IncomingOrderTable() {
 	if (error) toast.error(error.message);
 
 	return (
-		<div className="flex flex-col gap-4">
-			<DeliveryOrderFilter
+		<div className="flex flex-row gap-4">
+			<DeliveryOrderFilter 
 				{...{
 					pointFilter,
 					setPointFilter,
@@ -88,62 +88,66 @@ export default function IncomingOrderTable() {
 					handleConfirm: () => setFilterToggle(!filterToggle),
 				}}
 			/>
-			<Actions
-				selectAll={selectAll}
-				onSelectAll={() => {
-					setSelectAll(!selectAll);
-					!selectAll
-						? setSelectedOrders(
+			<div className="flex flex-col gap-4">
+				<Actions
+					selectAll={selectAll}
+					onSelectAll={() => {
+						setSelectAll(!selectAll);
+						!selectAll
+							? setSelectedOrders(
 								data?.data.data.map((order: any) => order.id as string)
-						  )
-						: setSelectedOrders([]);
-				}}
-				selected={!!selectedOrders.length}
-				rejectReason={rejectReason}
-				setRejectReason={setRejectReason}
-				onConfirm={() => confirmOrders(selectedOrders, "incoming")}
-				onReject={() => rejectOrders(selectedOrders, rejectReason, "incoming")}
-			/>
-			<Table columnHeadings={["", "ID", "From", "Time of Delivery"]}>
-				{data?.data.data.map(
-					({
-						id,
-						from,
-						deliveryTime,
-					}: {
-						id: string;
-						from: string;
-						deliveryTime: string;
-					}) => {
-						const selected =
-							selectedOrders.findIndex((selectedId) => selectedId === id) !==
-							-1;
-						const onChange = () => {
-							const index = selectedOrders.findIndex(
-								(selectedId) => selectedId === id
-							);
-							if (index === -1) {
-								setSelectedOrders([...selectedOrders, id as string]);
-							} else {
-								setSelectedOrders(
-									selectedOrders.filter((selectedId) => selectedId !== id)
+							)
+							: setSelectedOrders([]);
+					}}
+					selected={!!selectedOrders.length}
+					rejectReason={rejectReason}
+					setRejectReason={setRejectReason}
+					onConfirm={() => confirmOrders(selectedOrders, "incoming")}
+					onReject={() => rejectOrders(selectedOrders, rejectReason, "incoming")}
+				/>
+				<Table columnHeadings={["", "ID", "From", "Time of Delivery"]}>
+					{data?.data.data.map(
+						({
+							id,
+							from,
+							deliveryTime,
+						}: {
+							id: string;
+							from: string;
+							deliveryTime: string;
+						}) => {
+							const selected =
+								selectedOrders.findIndex((selectedId) => selectedId === id) !==
+								-1;
+							const onChange = () => {
+								const index = selectedOrders.findIndex(
+									(selectedId) => selectedId === id
 								);
-							}
-						};
-						return (
-							<IncomingOrderSummary
-								key={id}
-								{...{ id, from, deliveryTime, selected, onChange }}
-							/>
-						);
-					}
-				)}
-			</Table>
-			<Pagination
-				numberOfPages={data?.data.totalPage || 1}
-				setPageNumber={setPageNumber}
-				pageNumber={pageNumber}
-			/>
+								if (index === -1) {
+									setSelectedOrders([...selectedOrders, id as string]);
+								} else {
+									setSelectedOrders(
+										selectedOrders.filter((selectedId) => selectedId !== id)
+									);
+								}
+							};
+							return (
+								<IncomingOrderSummary
+									key={id}
+									{...{ id, from, deliveryTime, selected, onChange }}
+								/>
+							);
+						}
+					)}
+				</Table>
+				<Pagination
+					numberOfPages={data?.data.totalPage || 1}
+					setPageNumber={setPageNumber}
+					pageNumber={pageNumber}
+				/>
+			</div>
+
+
 		</div>
 	);
 }

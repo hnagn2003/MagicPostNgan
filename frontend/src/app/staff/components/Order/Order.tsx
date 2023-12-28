@@ -15,6 +15,7 @@ import { emptyOrder, useOrderState } from "../../utils/orders";
 import CustomerFieldset from "./Customer/CustomerFieldset";
 import ExtraDataFieldset from "./ExtraData/ExtraDataFieldset";
 import PackageFieldset from "./Package/PackageFieldset";
+import { Steps } from "antd";
 
 export default function Order({
 	order = null,
@@ -55,6 +56,12 @@ export default function Order({
 		createdAt,
 		status: status.value,
 	};
+	const [currentStep, setCurrentStep] = useState(0);
+
+	const onChangeStep = (value: number) => {
+		setCurrentStep(value);
+		console.log(value);
+	}
 
 	return (
 		<div>
@@ -83,50 +90,81 @@ export default function Order({
 				// handleSubmit={() => handleSubmit({ ...order, ...newOrder })}
 				// className="w-full gap-4 lg:grid lg:grid-cols-2 flex flex-col"
 				handleSubmit={() => handleSubmit(newOrder)}
-				className="w-full gap-4 lg:grid lg:grid-cols-2 flex flex-col"
+				className="w-full gap-4 lg:grid flex flex-col"
 			>
-				<CustomerFieldset
-					type="sender"
-					info={sender.value}
-					handleChange={sender.handleChange}
-					disabled={!editable}
+				{currentStep == 0 ?
+					<CustomerFieldset
+						type="sender"
+						info={sender.value}
+						handleChange={sender.handleChange}
+						disabled={!editable}
+					/>
+					: null}
+				{currentStep == 1 ?
+					<CustomerFieldset
+						type="receiver"
+						info={receiver.value}
+						handleChange={receiver.handleChange}
+						disabled={!editable}
+					/>
+					: null}
+				{currentStep == 2 ?
+					<PackageFieldset {...packageInfo} disabled={!editable} />
+					: null}
+				{currentStep == 3 ?
+					<>
+						<ExtraDataFieldset
+							{...{ ...extraData, packageValue }}
+							disabled={!editable}
+						/>
+						<div className="flex flex-row gap-4 justify-end items-center">
+							{order ? (
+								editable ? (
+									<>
+										<PrimaryButton type="submit">Save Changes</PrimaryButton>
+										<TerminateButton
+											type="button"
+											handleClick={() => {
+												resetOrder();
+												setEditable(false);
+											}}
+										>
+											Discard Changes
+										</TerminateButton>
+									</>
+								) : null
+							) : (
+								<>
+									<PrimaryButton type="submit">Confirm</PrimaryButton>
+									<SecondaryButton type="reset" handleClick={() => resetOrder()}>
+										Reset
+									</SecondaryButton>
+								</>
+							)}
+						</div>
+					</>
+
+
+					: null}
+				<Steps
+					current={currentStep}
+					onChange={onChangeStep}
+					items={[
+						{
+							title: 'Step 1',
+						},
+						{
+							title: 'Step 2',
+						},
+						{
+							title: 'Step 3',
+						},
+						{
+							title: 'Step 4',
+						},
+					]}
 				/>
-				<CustomerFieldset
-					type="receiver"
-					info={receiver.value}
-					handleChange={receiver.handleChange}
-					disabled={!editable}
-				/>
-				<PackageFieldset {...packageInfo} disabled={!editable} />
-				<ExtraDataFieldset
-					{...{ ...extraData, packageValue }}
-					disabled={!editable}
-				/>
-				<div className="flex flex-row gap-4">
-					{order ? (
-						editable ? (
-							<>
-								<PrimaryButton type="submit">Save Changes</PrimaryButton>
-								<TerminateButton
-									type="button"
-									handleClick={() => {
-										resetOrder();
-										setEditable(false);
-									}}
-								>
-									Discard Changes
-								</TerminateButton>
-							</>
-						) : null
-					) : (
-						<>
-							<PrimaryButton type="submit">Confirm</PrimaryButton>
-							<SecondaryButton type="reset" handleClick={() => resetOrder()}>
-								Reset
-							</SecondaryButton>
-						</>
-					)}
-				</div>
+
 			</Form>
 		</div>
 	);

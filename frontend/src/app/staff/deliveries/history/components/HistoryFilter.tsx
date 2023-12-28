@@ -29,7 +29,7 @@ export default function HistoryFilter({
 	return (
 		<FilterFieldset
 			handleConfirm={handleConfirm}
-			className="text-sm md:grid md:grid-cols-3"
+			className="text-sm md:grid md:grid-cols-1"
 		>
 			<SelectFilter
 				label="Type"
@@ -45,6 +45,7 @@ export default function HistoryFilter({
 				value={statusFilter}
 				setValue={setStatusFilter}
 			/>
+			{/* <div className="flex flex-col gap-4"> */}
 			<TimeRange
 				label="Time"
 				timeRange={timeRange}
@@ -56,8 +57,11 @@ export default function HistoryFilter({
 				handleChange={(address) =>
 					setPointFilter({ ...pointFilter, ...address })
 				}
-				className="col-span-3"
+				// className="col-span-3"
 			/>
+				
+			{/* </div> */}
+			
 		</FilterFieldset>
 	);
 }
