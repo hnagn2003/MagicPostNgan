@@ -1,5 +1,6 @@
 import TableRow from "@/app/staff/components/Table/TableRow";
-import { faBars, faEye } from "@fortawesome/free-solid-svg-icons";
+import { formatDate } from "@/utils/helper";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -23,6 +24,7 @@ export default function Summary<T extends DatabaseTableProps>({
 					return nestedItem[k];
 				}, item);
 			}
+			if (key === "createdAt") return formatDate(item[key]);
 			return item[key];
 		});
 	};

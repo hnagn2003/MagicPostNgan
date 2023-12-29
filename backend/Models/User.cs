@@ -10,7 +10,7 @@ public class User : Model
 	public required string Name { get; set; }
 	public required string Username { get; set; }
 	public required string Email { get; set; }
-	public required string PhoneNumber { get; set; }
+	// public required string PhoneNumber { get; set; }
 	public required string Password { get; set; }
 	public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 	public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
@@ -18,7 +18,9 @@ public class User : Model
 	public Guid? PointId { get; set; }
 	public Point? Point { get; }
 	public PublicUserInfo GetPublicInfo()
-			=> new() { Id = Id, Name = Name, Username = Username, Email = Email, PhoneNumber = PhoneNumber, PointId = PointId, Role = Role };
+			=> new() { Id = Id, Name = Name, Username = Username, Email = Email, PointId = PointId, Role = Role };
+// public PublicUserInfo GetPublicInfo()
+// 			=> new() { Id = Id, Name = Name, Username = Username, Email = Email, PhoneNumber = PhoneNumber, PointId = PointId, Role = Role };
 }
 
 public class PublicUserInfo
@@ -27,7 +29,7 @@ public class PublicUserInfo
 	public required string Name { get; set; }
 	public required string Username { get; set; }
 	public required string Email { get; set; }
-	public required string PhoneNumber { get; set; }
+	// public required string PhoneNumber { get; set; }
 	public required Role Role { get; set; }
 	public Guid? PointId { get; set; }
 }
@@ -46,8 +48,8 @@ public class CreateUserModel : Model
 	public string? Name { get; set; }
 	[Required]
 	public string? Email { get; set; }
-	[Required]
-	public string? PhoneNumber { get; set; }
+	// [Required]
+	// public string? PhoneNumber { get; set; }
 	[Required]
 	public string? Username { get; set; }
 	[Required]
@@ -66,8 +68,8 @@ public class RegisterModel : Model
 	public string? Name { get; set; }
 	[Required]
 	public string? Email { get; set; }
-	[Required]
-	public string? PhoneNumber { get; set; }
+	// [Required]
+	// public string? PhoneNumber { get; set; }
 	[Required]
 	public string? Username { get; set; }
 	[Required]

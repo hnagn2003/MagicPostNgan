@@ -59,9 +59,11 @@ export default function Page() {
 
 	if (error) toast.error(error.message);
 
-	if (data.data.data) {
+	console.log(data);
+
+	if (data.data) {
 		const { id, role, name, username, email, phoneNumber, pointId, point } =
-			data.data.data;
+			data.data;
 		const staff: CreateStaffProps = {
 			id,
 			role,
