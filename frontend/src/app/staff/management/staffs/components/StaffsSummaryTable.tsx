@@ -37,11 +37,11 @@ async function filterStaffs(
 
 const columnHeadings = [
 	{
-		label: "Name",
+		label: "Tên",
 		value: "name",
 	},
 	{
-		label: "Username",
+		label: "Tên Đăng Nhập",
 		value: "username",
 	},
 	{
@@ -49,11 +49,11 @@ const columnHeadings = [
 		value: "email",
 	},
 	{
-		label: "Phone Number",
+		label: "Số Điện Thoại",
 		value: "phoneNumber",
 	},
 	{
-		label: "Role",
+		label: "Vai Trò",
 		value: "role",
 	},
 ];

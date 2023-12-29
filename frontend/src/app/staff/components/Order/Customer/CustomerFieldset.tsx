@@ -17,8 +17,8 @@ export default function CustomerFieldset({
 	>;
 	disabled?: boolean;
 }) {
-	const pronounce = type === "sender" ? "Sender's" : "Receiver's";
-	const legend = pronounce + " Information";
+	const pronounce = type === "sender" ? "Người Gửi" : "Người Nhận";
+	const legend = "Thông Tin " + pronounce;
 	const { name, address, phone } = info;
 	return (
 		<Fieldset
@@ -28,7 +28,7 @@ export default function CustomerFieldset({
 			disabled={disabled}
 		>
 			<TextInput
-				label="Full name"
+				label="Họ Và Tên"
 				placeholder={`${pronounce} name`}
 				required={true}
 				name={`${type}-name`}
@@ -36,7 +36,7 @@ export default function CustomerFieldset({
 				handleChange={(name) => handleChange({ ...info, name })}
 			/>
 			<TextInput
-				label="Phone"
+				label="Số Điện Thoại"
 				placeholder={`${pronounce} number`}
 				name={`${type}-phone`}
 				value={phone}

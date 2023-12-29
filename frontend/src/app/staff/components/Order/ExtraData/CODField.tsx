@@ -18,9 +18,9 @@ export default function CODField({
 	}, [packageValue, checked, handleChange]);
 	return (
 		<div className="flex flex-col gap-2">
-			<div className="font-medium">Collect on Delivery</div>
+			<div className="font-medium">Thu khi vận chuyển</div>
 			<Checkbox
-				label="Use package's value"
+				label="Giá trị đơn hàng"
 				handleChange={() => {
 					if (!checked) {
 						handleChange(packageValue);

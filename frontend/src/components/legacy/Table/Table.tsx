@@ -22,7 +22,7 @@ export default function Table({
 				) : (
 					<tr className="border-none">
 						<td colSpan={100} className="text-center italic">
-							Nothing to show!
+						Không có gì để hiển thị
 						</td>
 					</tr>
 				)}

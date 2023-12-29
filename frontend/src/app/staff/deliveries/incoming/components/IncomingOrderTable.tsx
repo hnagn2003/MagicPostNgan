@@ -105,7 +105,7 @@ export default function IncomingOrderTable() {
 					onConfirm={() => confirmOrders(selectedOrders, "incoming")}
 					onReject={() => rejectOrders(selectedOrders, rejectReason, "incoming")}
 				/>
-				<Table columnHeadings={["", "ID", "From", "Time of Delivery"]}>
+				<Table columnHeadings={["", "ID", "Từ", "Thời Gian Vận Chuyển"]}>
 					{data?.data.data.map(
 						({
 							id,

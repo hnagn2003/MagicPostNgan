@@ -4,11 +4,11 @@ import SelectFilter from "../../Filter/SelectFilter";
 const statuses = [
 	{
 		value: "0",
-		label: "Pending",
+		label: "Đang chờ",
 	},
 	{
 		value: "1",
-		label: "Delivering",
+		label: "Đang vận chuyển",
 	},
 ];
 
@@ -21,7 +21,7 @@ export default function StatusFilter({
 }) {
 	return (
 		<SelectFilter
-			label="Status"
+			label="Trạng Thái"
 			name="status"
 			value={statusFilter}
 			setValue={setStatusFilter}

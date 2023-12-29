@@ -21,7 +21,7 @@ export default function SelectFilter({
 			options={[
 				{
 					value: "",
-					label: "All",
+					label: "Tất Cả",
 				},
 				...options,
 			]}

@@ -25,13 +25,13 @@ export type PackageItemsProps = {
 };
 
 export const PACKAGE_PROPERTIES = [
-	"High value",
-	"Fragile",
-	"Bulk",
-	"Out of Gauge",
-	"Liquid",
-	"Magnetic",
-	"Thermal Sensitive",
+	"Giá Trị Cao",
+	"Dễ Vỡ",
+	"Điện Tử",
+	"Quá Tải",
+	"Chất Lỏng",
+	"Vật Liệu Từ",
+	"Nhạy Cảm Với Nhiệt",
 ] as const;
 
 export type PackageProperties = (typeof PACKAGE_PROPERTIES)[number];

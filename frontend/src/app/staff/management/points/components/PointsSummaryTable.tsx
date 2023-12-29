@@ -36,15 +36,15 @@ async function filterPoints(
 
 const columnHeadings = [
 	{
-		label: "Point Name",
+		label: "Điểm Giao Dịch/ Tập Kết",
 		value: "pointName",
 	},
 	{
-		label: "Address",
+		label: "Địa Chỉ",
 		value: "address.name",
 	},
 	{
-		label: "Phone",
+		label: "Số Điện Thoại",
 		value: "phone",
 	},
 	{
@@ -52,7 +52,7 @@ const columnHeadings = [
 		value: "email",
 	},
 	{
-		label: "Type",
+		label: "Loại",
 		value: "type",
 	},
 ];

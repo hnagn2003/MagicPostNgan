@@ -13,7 +13,7 @@ export default function StaffAssignPointField({
 }) {
 	return (
 		<Fieldset
-			legend="Staff Point Assignment"
+			legend="Giao Vai Trò"
 			icon={faLocationDot}
 			className="sm:flex-col"
 			disabled={disabled}

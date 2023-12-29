@@ -37,31 +37,31 @@ async function filterOrders(
 
 const columnHeadings = [
 	{
-		label: "Created At",
+		label: "Tạo Vào Lúc",
 		value: "createdAt",
 	},
 	{
-		label: "Sender",
+		label: "Người Gửi",
 		value: "sender.name",
 	},
 	{
-		label: "From",
+		label: "Từ",
 		value: "sender.address.name",
 	},
 	{
-		label: "Receiver",
+		label: "Người Nhận",
 		value: "receiver.name",
 	},
 	{
-		label: "To",
+		label: "Tới",
 		value: "receiver.address.name",
 	},
 	{
-		label: "Category",
+		label: "Loại Hàng",
 		value: "packageInfo.type",
 	},
 	{
-		label: "Status",
+		label: "Tình Trạng",
 		value: "status",
 	},
 ];

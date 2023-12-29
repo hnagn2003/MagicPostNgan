@@ -66,14 +66,14 @@ export default function Order({
 	return (
 		<div>
 			<div className="flex flex-row justify-between items-center">
-				<Title>{order ? `Order ID: ${order.id}` : "New Order"}</Title>
+				<Title>{order ? `Order ID: ${order.id}` : "Đơn hàng mới"}</Title>
 				{editable ? null : (
 					<button
 						className="btn btn-success mb-4 btn-sm"
 						type="button"
 						onClick={() => setEditable(true)}
 					>
-						EDIT
+						CHỈNH SỬA
 					</button>
 				)}
 			</div>
@@ -121,7 +121,7 @@ export default function Order({
 							{order ? (
 								editable ? (
 									<>
-										<PrimaryButton type="submit">Save Changes</PrimaryButton>
+										<PrimaryButton type="submit">Lưu Thay Đổi</PrimaryButton>
 										<TerminateButton
 											type="button"
 											handleClick={() => {
@@ -129,15 +129,15 @@ export default function Order({
 												setEditable(false);
 											}}
 										>
-											Discard Changes
+											Hủy Bỏ Thay Đổi
 										</TerminateButton>
 									</>
 								) : null
 							) : (
 								<>
-									<PrimaryButton type="submit">Confirm</PrimaryButton>
+									<PrimaryButton type="submit">Xác Nhận</PrimaryButton>
 									<SecondaryButton type="reset" handleClick={() => resetOrder()}>
-										Reset
+										Làm Mới
 									</SecondaryButton>
 								</>
 							)}
@@ -151,16 +151,16 @@ export default function Order({
 					onChange={onChangeStep}
 					items={[
 						{
-							title: 'Step 1',
+							title: 'Bước 1',
 						},
 						{
-							title: 'Step 2',
+							title: 'Bước 2',
 						},
 						{
-							title: 'Step 3',
+							title: 'Bước 3',
 						},
 						{
-							title: 'Step 4',
+							title: 'Bước 4',
 						},
 					]}
 				/>

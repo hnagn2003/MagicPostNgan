@@ -32,14 +32,14 @@ export default function HistoryFilter({
 			className="text-sm md:grid md:grid-cols-1"
 		>
 			<SelectFilter
-				label="Type"
+				label="Loại"
 				name="type"
 				options={types}
 				value={typeFilter}
 				setValue={setTypeFilter}
 			/>
 			<SelectFilter
-				label="Status"
+				label="Trạng Thái"
 				name="status"
 				options={statuses}
 				value={statusFilter}
@@ -47,7 +47,7 @@ export default function HistoryFilter({
 			/>
 			{/* <div className="flex flex-col gap-4"> */}
 			<TimeRange
-				label="Time"
+				label="Thời Gian"
 				timeRange={timeRange}
 				handleChange={setTimeRange}
 			/>

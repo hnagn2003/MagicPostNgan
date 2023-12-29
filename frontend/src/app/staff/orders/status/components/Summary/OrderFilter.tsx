@@ -4,21 +4,21 @@ import { Dispatch, SetStateAction } from "react";
 const statuses = [
 	{
 		value: "0",
-		label: "Pending",
+		label: "Đang chờ",
 	},
 	{
 		value: "1",
-		label: "Delivering",
+		label: "Đang vận chuyển",
 	},
 ];
 const categories = [
 	{
 		value: "parcel",
-		label: "Parcel",
+		label: "Bưu Kiện",
 	},
 	{
 		value: "document",
-		label: "Document",
+		label: "Tài Liệu",
 	},
 ];
 
@@ -42,21 +42,21 @@ export default function OrderFilter({
 	return (
 		<FilterFieldset handleConfirm={() => handleConfirm()}>
 			<Filter
-				label="Status"
+				label="Trạng Thái"
 				name="status"
 				value={statusFilter}
 				setValue={setStatusFilter}
 				options={statuses}
 			/>
 			<Filter
-				label="Category"
+				label="Loại"
 				name="category"
 				value={categoryFilter}
 				setValue={setCategoryFilter}
 				options={categories}
 			/>
 			<Filter
-				label="Timerange"
+				label="Thời Gian"
 				name="timerange"
 				type="timerange"
 				value={timeRange}

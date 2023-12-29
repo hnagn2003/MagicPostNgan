@@ -55,7 +55,7 @@ export default function LookupResult({ orderId }: { orderId: string }) {
 						</span>
 					</div>
 					<div className="flex flex-row justify-between gap-2">
-						<span className="text-primary">Package Type:</span>{" "}
+						<span className="text-primary">Loại Gói Hàng:</span>{" "}
 						<span>{order.packageInfo.type}</span>
 					</div>
 					<div className="flex flex-row justify-between gap-2">

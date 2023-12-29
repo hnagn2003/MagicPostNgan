@@ -41,13 +41,13 @@ export default function StaffFieldSet({
 }) {
 	return (
 		<Fieldset
-			legend="Staff's Information"
+			legend="Thông Tin Nhân Viên"
 			icon={faLocationDot}
 			className="sm:flex-col"
 			disabled={disabled}
 		>
 			<Select
-				label="Role"
+				label="Vai Trò"
 				name="role"
 				options={roles}
 				handleChange={(value) => {
@@ -59,7 +59,7 @@ export default function StaffFieldSet({
 				disabled={editView}
 			/>
 			<TextInput
-				label="Name"
+				label="Tên"
 				placeholder="Name"
 				required={true}
 				name="name"
@@ -68,7 +68,7 @@ export default function StaffFieldSet({
 				prefix={<UserOutlined />}
 			/>
 			<TextInput
-				label="Username"
+				label="Tên Người Dùng"
 				placeholder="Username"
 				required={true}
 				name="username"
@@ -88,8 +88,8 @@ export default function StaffFieldSet({
 				prefix={<MailOutlined />}
 			/>
 			<TextInput
-				label="Phone number"
-				placeholder="Phone number"
+				label="Số Điện Thoại"
+				placeholder="Số Điện Thoại"
 				required={true}
 				name="phoneNumber"
 				value={state.phoneNumber.value}

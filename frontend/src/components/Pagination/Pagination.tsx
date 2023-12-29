@@ -23,7 +23,7 @@ export default function Pagination({
 					onChange={(e) => setPageInput(parseInt(e.currentTarget.value))}
 					min={1}
 					max={numberOfPages}
-					placeholder="Page #"
+					placeholder="Trang #"
 				/>
 				<button
 					type="button"

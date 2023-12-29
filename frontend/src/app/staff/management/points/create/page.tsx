@@ -46,7 +46,7 @@ export default function Page() {
 	}
 	return (
 		<>
-			<Title>New Point</Title>
+			<Title>Thêm Điểm </Title>
 			<Point handleSubmit={handleSubmit} />
 		</>
 	);

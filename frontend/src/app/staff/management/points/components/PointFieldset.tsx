@@ -17,14 +17,14 @@ export default function PointFieldSet({
 }) {
 	return (
 		<Fieldset
-			legend={"Point's Information"}
+			legend={"Thông Tin Điểm"}
 			icon={faLocationDot}
 			className="sm:flex-col"
 			disabled={disabled}
 		>
 			<TextInput
-				label="Point name"
-				placeholder="Point name"
+				label="Tên Điểm"
+				placeholder="Tên Điểm"
 				required={true}
 				name="point-name"
 				value={state.pointName.value}
@@ -35,11 +35,11 @@ export default function PointFieldSet({
 
 			/>
 			<Select
-				label="Point type"
+				label="Loại Điểm"
 				name="type"
 				options={[
-					{ label: "Transaction Point", value: "TRANSACTION_POINT" },
-					{ label: "Gathering Point", value: "GATHERING_POINT" },
+					{ label: "Điểm Giao Dịch", value: "TRANSACTION_POINT" },
+					{ label: "Điểm Tập Kết", value: "GATHERING_POINT" },
 				]}
 				handleChange={(value) => {
 					state.type.handleChange(value);
@@ -49,8 +49,8 @@ export default function PointFieldSet({
 				required={true}
 			/>
 			<TextInput
-				label="Phone"
-				placeholder="Phone"
+				label="Số Điện Thoại"
+				placeholder="Số Điện Thoại"
 				required={true}
 				name="phone"
 				value={state.phone.value}

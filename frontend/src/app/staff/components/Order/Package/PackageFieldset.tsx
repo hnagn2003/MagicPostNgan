@@ -12,7 +12,7 @@ export default function PackageFieldset({
 	disabled = false,
 }: PackageProps) {
 	return (
-		<Fieldset legend="Package" icon={faBox} disabled={disabled}>
+		<Fieldset legend="Gói Hàng" icon={faBox} disabled={disabled}>
 			<PackageTypeField {...type} />
 			<hr className="border" />
 			<PackageItemsField {...items} disabled={disabled} />

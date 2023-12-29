@@ -4,7 +4,7 @@ import OrdersSummaryTable from "./components/Summary/OrdersSummaryTable";
 function Page() {
 	return (
 		<div>
-			<Title>Order Status</Title>
+			<Title>Tình Trạng Đặt Hàng</Title>
 			<OrdersSummaryTable />
 		</div>
 	);

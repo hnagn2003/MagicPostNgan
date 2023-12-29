@@ -96,8 +96,8 @@ export default function AddressInput({
 				>
 					
 					<AddressAutoComplete
-						label="Province"
-						placeholder="Province"
+						label="Tỉnh/Thành Phố"
+						placeholder="Tỉnh/Thành Phố"
 						required={true}
 						value={value.province}
 						options={provinces}
@@ -105,8 +105,8 @@ export default function AddressInput({
 						filterOption={filterOption}
 					/>
 					<AddressAutoComplete
-						label="District"
-						placeholder="District"
+						label="Quận/Huyện"
+						placeholder="Quận/Huyện"
 						required={true}
 						value={value.district}
 						options={districts}
@@ -114,8 +114,8 @@ export default function AddressInput({
 						filterOption={filterOption}
 					/>
 					<AddressAutoComplete
-						label="Ward"
-						placeholder="Ward"
+						label="Xã/Phường"
+						placeholder="Xã/Phường"
 						required={true}
 						value={value.ward}
 						options={wards}
@@ -125,8 +125,8 @@ export default function AddressInput({
 				</div>
 				{includeSpecificAddress && (
 					<AddressAutoComplete
-						label="Specific address"
-						placeholder="Specific address"
+						label="Địa Chỉ Cụ Thể"
+						placeholder="Địa Chỉ Cụ Thể"
 						required={true}
 						value={value.name}
 						options={specificAddresses}
@@ -139,11 +139,7 @@ export default function AddressInput({
 						onKeyDown={handleEnterSpecificAddress}
 					>
 						<Input
-							suffix={
-								<small style={{ color: "grey" }}>
-									Press <b>Enter</b> to search
-								</small>
-							}
+							
 							size="large"
 							allowClear={{
 								clearIcon: <FontAwesomeIcon icon={faCircleXmark} />,

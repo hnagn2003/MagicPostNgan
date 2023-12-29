@@ -23,38 +23,31 @@ export default function Actions({
 	setRejectReason: Dispatch<SetStateAction<string>>;
 }) {
 	return (
-		<Fieldset legend="Actions" icon={faList}>
+		<Fieldset legend="Hành Động" icon={faList}>
 			<div className="w-full flex flex-row gap-4">
 				<SecondaryButton
 					type="button"
 					className="mr-auto"
 					handleClick={() => onSelectAll()}
 				>
-					{!selectAll ? "Select All" : "Cancel"}
+					{!selectAll ? "Chọn Tất Cả" : "Hủy"}
 				</SecondaryButton>
 				<PrimaryButton
 					type="button"
-					className="btn-sm disabled:bg-[#444054]"
+					className="btn-sm disabled:bg-base-100"
 					disabled={!selected}
 					handleClick={() => onConfirm()}
 				>
-					Confirm Selected
+					Xác Nhận Chọn
 				</PrimaryButton>
 				<SecondaryButton
 					type="button"
-					className="btn-error disabled:bg-[#EF959D]"
+					className="btn-error disabled:bg-base-100"
 					disabled={!selected || !rejectReason}
 					handleClick={() => onReject()}
 				>
-					Reject
+					Từ Chối
 				</SecondaryButton>
-				<input
-					type="text"
-					className="custom-input disabled:bg-[#B7B6C1]"
-					placeholder="Reason for reject"
-					disabled={!selected}
-					onChange={(e) => setRejectReason(e.currentTarget.value)}
-				/>
 				<button type="button">
 					<FontAwesomeIcon icon={faRotateRight} className="w-full" />
 				</button>

@@ -40,42 +40,42 @@ const fakeTopDeliveries = [
 		outgoing: 212,
 	},
 	{
-		point: "Thai Binh",
+		point: "Thái Bình",
 		incoming: 423,
 		outgoing: 231,
 	},
 	{
-		point: "Thai Binh",
+		point: "Thái Bình",
 		incoming: 423,
 		outgoing: 231,
 	},
 	{
-		point: "Thai Binh",
+		point: "Thái Bình",
 		incoming: 423,
 		outgoing: 231,
 	},
 	{
-		point: "Thai Binh",
+		point: "Thái Bình",
 		incoming: 423,
 		outgoing: 231,
 	},
 	{
-		point: "Thai Binh",
+		point: "Thái Bình",
 		incoming: 423,
 		outgoing: 231,
 	},
 	{
-		point: "Thai Binh",
+		point: "Thái Bình",
 		incoming: 423,
 		outgoing: 231,
 	},
 	{
-		point: "Thai Binh",
+		point: "Thái Bình",
 		incoming: 423,
 		outgoing: 231,
 	},
 	{
-		point: "Thai Binh",
+		point: "Thái Bình",
 		incoming: 423,
 		outgoing: 231,
 	},
@@ -83,35 +83,35 @@ const fakeTopDeliveries = [
 
 const fakeProperties = [
 	{
-		property: "High value",
+		property: "Giá Trị Cao",
 		value: 123,
 	},
 	{
-		property: "Fragile",
+		property: "Dễ Vỡ",
 		value: 192,
 	},
 	{
-		property: "Bulk",
+		property: "Số Lượng Lớn",
 		value: 112,
 	},
 	{
-		property: "Out of Gauge",
+		property: "Quá Giới Hạn",
 		value: 210,
 	},
 	{
-		property: "Liquid",
+		property: "Chất Lỏng",
 		value: 123,
 	},
 	{
-		property: "Magnetic",
+		property: "Vật Liệu Từ",
 		value: 123,
 	},
 	{
-		property: "Thermal Sensitive",
+		property: "Nhạy Cảm Với Nhiệt",
 		value: 323,
 	},
 	{
-		property: "Standard",
+		property: "Tiêu Chuẩn",
 		value: 192,
 	},
 ];
@@ -126,7 +126,7 @@ function getRandomArray(length: number): number[] {
 
 const fakeTransactionPoints = [
 	{
-		gather: "Ha Noi",
+		gather: "Hà Nội",
 		transaction: "Cau Giay",
 		success: Math.floor(Math.random() * 100 + 10),
 		unsucess: Math.floor(Math.random() * 100 + 10),
@@ -142,7 +142,7 @@ fakeTransactionPoints.forEach((point) => {
 
 const fakeGatheringPoints = [
 	{
-		name: "Ha Noi",
+		name: "Hà Nội",
 		toTransaction: [
 			{
 				transaction: "Cau Giay",
@@ -182,19 +182,19 @@ const fakeGatheringPoints = [
 		],
 		toGather: [
 			{
-				gather: "Ho Chi Minh",
+				gather: "Hồ Chí Minh",
 				send: getRandomArray(7),
 				receive: getRandomArray(7),
 			},
 			{
-				gather: "Thai Binh",
+				gather: "Thái Bình",
 				send: getRandomArray(7),
 				receive: getRandomArray(7),
 			},
 		]
 	},
 	{
-		name: "Ho Chi Minh",
+		name: "Hồ Chí Minh",
 		toTransaction: [
 			{
 				transaction: "Quan 1",
@@ -234,20 +234,20 @@ const fakeGatheringPoints = [
 		],
 		toGather: [
 			{
-				gather: "Ha Noi",
+				gather: "Hà Nội",
 				send: getRandomArray(7),
 				receive: getRandomArray(7),
 
 			},
 			{
-				gather: "Thai Binh",
+				gather: "Thái Bình",
 				send: getRandomArray(7),
 				receive: getRandomArray(7),
 			},
 		]
 	},
 	{
-		name: "Thai Binh",
+		name: "Thái Bình",
 		toTransaction: [
 			{
 				transaction: "Dong Hung",
@@ -272,13 +272,13 @@ const fakeGatheringPoints = [
 		],
 		toGather: [
 			{
-				gather: "Ho Chi Minh",
+				gather: "Hồ Chí Minh",
 				send: getRandomArray(7),
 				receive: getRandomArray(7),
 
 			},
 			{
-				gather: "Ha Noi",
+				gather: "Hà Nội",
 				send: getRandomArray(7),
 
 				receive: getRandomArray(7),

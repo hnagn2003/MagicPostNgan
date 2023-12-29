@@ -11,9 +11,9 @@ function Page() {
 	return (
 		<div className="flex flex-col">
 			<div className="flex justify-between">
-				<Title>Staffs</Title>
+				<Title>Nhân Viên</Title>
 				<PrimaryButton handleClick={() => router.push("staffs/create")}>
-					Create new staff
+					Tạo Nhân Viên
 				</PrimaryButton>
 			</div>
 			<StaffsSummaryTable />

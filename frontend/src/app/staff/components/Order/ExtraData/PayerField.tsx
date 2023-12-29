@@ -4,10 +4,10 @@ import RadioInput from "../../../../../components/Form/RadioInput";
 export function PayerField({ value, handleChange }: PayerProps) {
 	return (
 		<div className="flex flex-col gap-2">
-			<div className="font-medium">Payer</div>
+			<div className="font-medium">Người trả</div>
 			<div className="flex flex-row justify-between">
 				<RadioInput
-					label="Sender"
+					label="Người gửi"
 					name="payer"
 					checked={value === "sender"}
 					handleChange={() => {
@@ -18,7 +18,7 @@ export function PayerField({ value, handleChange }: PayerProps) {
 					value={"sender"}
 				/>
 				<RadioInput
-					label="Receiver"
+					label="Người nhận"
 					name="payer"
 					checked={value === "receiver"}
 					handleChange={() => {

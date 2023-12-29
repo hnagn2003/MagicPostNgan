@@ -6,12 +6,12 @@ export default function PackageTypeField({
 	handleChange,
 }: PackageTypeProps) {
 	const types = [
-		{ label: "Parcel", value: "parcel" },
-		{ label: "Document", value: "document" },
+		{ label: "Bưu Kiện", value: "parcel" },
+		{ label: "Tài Liệu", value: "document" },
 	];
 	return (
 		<div>
-			<div className="text-md font-medium mb-2">Package Type</div>
+			<div className="text-md font-medium mb-2">Loại Gói Hàng</div>
 			<div className="flex flex-row gap-44">
 				{types.map((type) => (
 					<RadioInput

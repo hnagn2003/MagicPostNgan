@@ -4,7 +4,7 @@ import IncomingOrderTable from "./components/IncomingOrderTable";
 export default function Page() {
 	return (
 		<div>
-			<Title>Incoming Orders</Title>
+			<Title>Đơn Hàng Tới</Title>
 			<IncomingOrderTable />
 		</div>
 	);

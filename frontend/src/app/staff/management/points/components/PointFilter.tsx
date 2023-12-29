@@ -42,7 +42,7 @@ export default function PointFilter({
 				}
 			/>
 			<Filter
-				label="Point Type"
+				label="Loại Điểm"
 				name="point-type"
 				value={pointTypeFilter}
 				setValue={setPointTypeFilter}

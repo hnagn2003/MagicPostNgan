@@ -14,7 +14,7 @@ export default function FilterFieldset({
 	return (
 		<Fieldset
 			icon={faFilter}
-			legend="Filter"
+			legend="Lọc"
 			className={
 				className
 					? className
