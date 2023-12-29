@@ -15,7 +15,7 @@ export default function Fieldset({
 }) {
 	return (
 		<fieldset
-			className={`flex flex-col gap-4 justify-between min-w-0 ${className} bg-custom-white px-6 pt-14 pb-4 relative rounded-md shadow-md`}
+			className={`flex flex-col gap-4 justify-between min-w-0 ${className} bg-custom-blue px-6 pt-14 pb-4 relative rounded-md shadow-md`}
 		>
 			{disabled ? (
 				<div className="absolute top-0 left-0 w-full h-full bg-[#D1D5DE] opacity-40 z-20 cursor-not-allowed rounded-md"></div>

@@ -43,15 +43,17 @@ export default function StaffFilter({
 	return (
 		<FilterFieldset
 			handleConfirm={handleConfirm}
-			className="md:grid md:grid-cols-4 gap-2 flex flex-col w-full text-sm"
+			className="md:grid md:grid-cols-1 gap-2 flex flex-colw-full text-sm"
 		>
+			{/* <div className=""></div> */}
 			<AddressInput
+				// className="row-span-4"
 				includeSpecificAddress={false}
 				value={pointFilter}
 				handleChange={(address) =>
 					setPointFilter({ ...pointFilter, ...address })
 				}
-				className="col-span-3"
+
 			/>
 			<Filter
 				label="Role"
@@ -60,6 +62,8 @@ export default function StaffFilter({
 				setValue={setRoleFilter}
 				options={roles}
 			/>
+
+
 		</FilterFieldset>
 	);
 }

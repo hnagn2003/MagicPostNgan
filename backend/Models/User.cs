@@ -18,9 +18,7 @@ public class User : Model
 	public Guid? PointId { get; set; }
 	public Point? Point { get; }
 	public PublicUserInfo GetPublicInfo()
-			=> new() { Id = Id, Name = Name, Username = Username, Email = Email, PointId = PointId, Role = Role };
-// public PublicUserInfo GetPublicInfo()
-// 			=> new() { Id = Id, Name = Name, Username = Username, Email = Email, PhoneNumber = PhoneNumber, PointId = PointId, Role = Role };
+			=> new() { Id = Id, Name = Name, Username = Username, Email = Email,  PointId = PointId, Role = Role };
 }
 
 public class PublicUserInfo
@@ -48,9 +46,9 @@ public class CreateUserModel : Model
 	public string? Name { get; set; }
 	[Required]
 	public string? Email { get; set; }
-	// [Required]
-	// public string? PhoneNumber { get; set; }
 	[Required]
+	// public string? PhoneNumber { get; set; }
+	// [Required]
 	public string? Username { get; set; }
 	[Required]
 	public Role Role { get; set; }

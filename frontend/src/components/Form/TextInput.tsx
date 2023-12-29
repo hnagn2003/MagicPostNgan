@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import InputContainer from "./InputContainer";
+import { Input } from 'antd';
 
 export default function TextInput({
 	label = "",
@@ -12,7 +13,7 @@ export default function TextInput({
 	className = "",
 	value,
 	handleChange,
-	disabled = false,
+	prefix
 }: {
 	label: string;
 	placeholder: string;
@@ -22,14 +23,12 @@ export default function TextInput({
 	className?: string;
 	value: string;
 	handleChange: (value: string) => void;
-	disabled?: boolean;
+	prefix: any
 }) {
 	const [focused, setFocused] = useState(false);
 	return (
 		<InputContainer {...{ label, required, className }}>
-			<input
-				type={type}
-				placeholder={placeholder}
+			<Input type={type} size="small" placeholder={placeholder}
 				className={`custom-input ${
 					focused && value === "" ? "custom-input-invalid" : ""
 				}`}
@@ -38,8 +37,7 @@ export default function TextInput({
 				required={required}
 				value={value}
 				onChange={(e) => handleChange(e.currentTarget.value)}
-				disabled={disabled}
-			/>
+				prefix={prefix}/>
 		</InputContainer>
 	);
 }

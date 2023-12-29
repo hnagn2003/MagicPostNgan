@@ -4,6 +4,9 @@ import Fieldset from "../../../../../components/Form/Fieldset";
 import Select from "../../../../../components/Form/Select";
 import TextInput from "../../../../../components/Form/TextInput";
 import { PointStateProps } from "../../../utils/points";
+import { UserOutlined } from '@ant-design/icons';
+import { MailOutlined } from '@ant-design/icons';
+import { PhoneOutlined } from '@ant-design/icons';
 
 export default function PointFieldSet({
 	state,
@@ -28,6 +31,8 @@ export default function PointFieldSet({
 				handleChange={(pointName: string) =>
 					state.pointName.handleChange(pointName)
 				}
+				prefix={<UserOutlined />}
+
 			/>
 			<Select
 				label="Point type"
@@ -50,6 +55,7 @@ export default function PointFieldSet({
 				name="phone"
 				value={state.phone.value}
 				handleChange={(phone: string) => state.phone.handleChange(phone)}
+				prefix={<PhoneOutlined />}
 			/>
 			<TextInput
 				label="Email"
@@ -58,6 +64,7 @@ export default function PointFieldSet({
 				name="email"
 				value={state.email.value}
 				handleChange={(email: string) => state.email.handleChange(email)}
+				prefix={<MailOutlined />}
 			/>
 			<AddressInput
 				value={state.address.value}
