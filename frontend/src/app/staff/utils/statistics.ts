@@ -116,6 +116,177 @@ const fakeProperties = [
 	},
 ];
 
+function getRandomArray(length: number): number[] {
+	const randomArray: number[] = [];
+	for (let i = 0; i < length; i++) {
+		randomArray.push(Math.floor(Math.random() * 100 + 10)); // Generating random numbers between 0 and 99, adjust as needed
+	}
+	return randomArray;
+}
+
+const fakeTransactionPoints = [
+	{
+		gather: "Ha Noi",
+		transaction: "Cau Giay",
+		success: Math.floor(Math.random() * 100 + 10),
+		unsucess: Math.floor(Math.random() * 100 + 10),
+		returns: Math.floor(Math.random() * 100 + 10),
+		total_send: 0,
+		total_receive: Math.floor(Math.random() * 3 * (100 + 10)),
+	}
+]
+
+fakeTransactionPoints.forEach((point) => {
+	point.total_send = point.success + point.unsucess + point.returns;
+});
+
+const fakeGatheringPoints = [
+	{
+		name: "Ha Noi",
+		toTransaction: [
+			{
+				transaction: "Cau Giay",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Dong Da",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Ba Dinh",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Hai Ba Trung",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Nam Tu Liem",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Bac Tu Liem",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Hoan Kiem",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+		],
+		toGather: [
+			{
+				gather: "Ho Chi Minh",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				gather: "Thai Binh",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+		]
+	},
+	{
+		name: "Ho Chi Minh",
+		toTransaction: [
+			{
+				transaction: "Quan 1",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Quan 3",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Quan 4",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Quan 5",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Quan 6",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Quan 8",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Quan 10",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+		],
+		toGather: [
+			{
+				gather: "Ha Noi",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+
+			},
+			{
+				gather: "Thai Binh",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+		]
+	},
+	{
+		name: "Thai Binh",
+		toTransaction: [
+			{
+				transaction: "Dong Hung",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Hung Ha",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Quynh Coi",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+			{
+				transaction: "Tien Hai",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+			},
+		],
+		toGather: [
+			{
+				gather: "Ho Chi Minh",
+				send: getRandomArray(7),
+				receive: getRandomArray(7),
+
+			},
+			{
+				gather: "Ha Noi",
+				send: getRandomArray(7),
+
+				receive: getRandomArray(7),
+			},
+		]
+	},
+]
+
 export async function getStatistics(point: Address) {
 	return Promise.resolve({
 		message: "success",
@@ -125,6 +296,8 @@ export async function getStatistics(point: Address) {
 			revenue: fakeRevenue,
 			topDeliveries: fakeTopDeliveries,
 			properties: fakeProperties,
+			transactionPoints: fakeTransactionPoints,
+			gatheringPoints: fakeGatheringPoints,
 		},
 	});
 	const rawParams = {};

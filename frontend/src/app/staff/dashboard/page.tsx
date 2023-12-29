@@ -58,9 +58,9 @@ export default function Page() {
 						</div>
 					</div>
 					<div className="">
-						<Overview {...statistics.overview} />
+						<Overview data = {statistics.gatheringPoints} />
 						{/* <MonthlyOrderChart data={statistics.orders} /> */}
-						<ProvinceChart data={statistics.topDeliveries} />
+						{/* <ProvinceChart data={statistics.topDeliveries} /> */}
 						{/* <RevenueChart {...statistics.revenue} /> */}
 						{/* <TopDeliveriesChart data={statistics.topDeliveries} /> */}
 						{/* <PropertiesChart data={statistics.properties} /> */}
