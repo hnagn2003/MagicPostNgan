@@ -18,12 +18,6 @@ export default function Page(): React.ReactNode {
 					<h1 className="md:text-4xl text-2xl font-bold">
 						Your Go-to Delivery Service!
 					</h1>
-					<p className="py-6">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-						repellendus illum tempora illo, beatae vel, fugiat obcaecati nam
-						aliquam sunt doloribus doloremque inventore, soluta deserunt! Sequi
-						neque optio ratione. Voluptates.
-					</p>
 					<div className="flex w-full">
 						<div className="w-1/2 flex flex-col place-items-center gap-4">
 							If you are a customer

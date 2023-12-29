@@ -39,8 +39,7 @@ export default function Page() {
 
 				<div className="pt-4">
 					<div className=" flex flex-col sm:flex-row sm:items-end w-full">
-						<Title>Dashboard</Title>
-						<div className="w-full sm:w-fit flex flex-row items-end mb-4 ml-auto">
+						{/* <div className="w-full sm:w-fit flex flex-row items-end mb-4 ml-auto">
 							<AddressInput
 								rowLayoutOnSmallView={true}
 								className="text-xs w-full sm:w-64"
@@ -55,7 +54,7 @@ export default function Page() {
 							>
 								<FontAwesomeIcon icon={faMagnifyingGlass} />
 							</button>
-						</div>
+						</div> */}
 					</div>
 					<div className="">
 						<Overview data = {statistics.gatheringPoints} />

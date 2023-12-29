@@ -45,12 +45,6 @@ export default function Page() {
 							className="w-3/4"
 						/>
 					</h1>
-					<p className="py-6">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
-						harum, reprehenderit, eaque ullam aperiam sunt velit dicta totam
-						delectus perferendis, corporis iste. Odio voluptas quas eos ducimus
-						distinctio consectetur nemo.
-					</p>
 				</div>
 				<div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
 					<form className="card-body">
@@ -69,7 +63,7 @@ export default function Page() {
 						</div>
 						<div className="form-control">
 							<label className="label">
-								<span className="label-text">Password</span>
+								<span className="label-text">Mật khẩu</span>
 							</label>
 							<input
 								type="password"
@@ -81,13 +75,13 @@ export default function Page() {
 							/>
 							<label className="label">
 								<a href="#" className="label-text-alt link link-hover">
-									Forgot password?
+									Quên mật khẩu
 								</a>
 							</label>
 						</div>
 						<div className="form-control mt-6">
 							<button className="btn btn-primary" onClick={handleLogin}>
-								Login
+								Đăng nhập
 							</button>
 						</div>
 					</form>

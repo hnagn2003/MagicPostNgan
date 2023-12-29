@@ -1,5 +1,5 @@
 "use client";
-import { faBell, faDoorOpen } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -46,25 +46,25 @@ export default function Header({ onToggle }: { onToggle: () => void }) {
 	};
 	const orderItems = [
 
-		getMenuItemProps("Create", "/staff/orders/create", faFolderPlus),
-		getMenuItemProps("Status", "/staff/orders/status", faListCheck),
+		getMenuItemProps("Tạo", "/staff/orders/create", faFolderPlus),
+		getMenuItemProps("Tình Trạng", "/staff/orders/status", faListCheck),
 	].map((props) => <MenuItem {...props} key={props.path} />);
 	const deliveryItems = [
 		getMenuItemProps(
-			"Incoming",
+			"Nhận",
 			"/staff/deliveries/incoming",
 			faArrowRightToBracket
 		),
 		getMenuItemProps(
-			"Outgoing",
+			"Gửi",
 			"/staff/deliveries/outgoing",
 			faArrowRightFromBracket
 		),
-		getMenuItemProps("History", "/staff/deliveries/history", faClockRotateLeft),
+		getMenuItemProps("Lịch Sử", "/staff/deliveries/history", faClockRotateLeft),
 	].map((props) => <MenuItem {...props} key={props.path} />);
 	const managementItems = [
-		getMenuItemProps("Staffs", "/staff/management/staffs", faUserGroup),
-		getMenuItemProps("Points", "/staff/management/points", faBuilding),
+		getMenuItemProps("Nhân Viên", "/staff/management/staffs", faUserGroup),
+		getMenuItemProps("Điểm", "/staff/management/points", faBuilding),
 	].map((props) => <MenuItem {...props} key={props.path} />);
 
 	return (
@@ -76,19 +76,18 @@ export default function Header({ onToggle }: { onToggle: () => void }) {
 					alt=""
 					width="0"
 					height="0"
-					className="md:w-28 w-28 h-auto"
+					className="md:w-16 w-16 m-6 h-auto"
 				/>
 			</picture>
-			<Toggle onToggle={onToggle} />
 			<ul className="menu xl:menu-horizontal  lg:min-w-max bg-base-100 rounded-box h-16">
-					<div className="btn bg-base-300 hover:bg-base-100">
-					<MenuItem label="Dashboard" path="/staff/dashboard" subitem={false} />
+					<div className="btn bg-base-400 hover:bg-base-100">
+					<MenuItem label="Thống Kê" path="/staff/dashboard" subitem={false} />
 					</div>
-					<SubMenu label="Orders">{orderItems}</SubMenu>
+					<SubMenu label="Đơn Hàng">{orderItems}</SubMenu>
 
-					<SubMenu label="Deliveries">{deliveryItems}</SubMenu>
+					<SubMenu label="Vận Chuyển">{deliveryItems}</SubMenu>
 
-					<SubMenu label="Management">{managementItems}</SubMenu>
+					<SubMenu label="Quản Lý">{managementItems}</SubMenu>
 
 			</ul>
 			<div className="flex justify-center items-center">
@@ -96,15 +95,12 @@ export default function Header({ onToggle }: { onToggle: () => void }) {
 				<div className="search-bar mr-4 relative">
 					<input
 						type="text"
-						placeholder="Take a look..."
+						placeholder="Tìm kiếm..."
 						className="search-input rounded-full py-2 px-4 border border-gray-300 focus:outline-none focus:border-blue-500 mx-auto custom-search-input" />
 				</div>
 			</div>
-			<FontAwesomeIcon icon={faBell} className=" ml-auto h-4" />
-			<SearchBar />
-			<Avatar src="/default_avatar.png" />
 			<button onClick={handleLogout}>
-				<FontAwesomeIcon icon={faDoorOpen} className="h-4" />
+				<FontAwesomeIcon icon={faSignOutAlt} className="h-4" />
 			</button>
 		</header>
 	);

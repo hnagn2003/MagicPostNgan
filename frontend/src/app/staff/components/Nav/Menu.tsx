@@ -26,7 +26,7 @@ export default function Menu() {
 
 	const deliveryItems = [
 		getMenuItemProps(
-			"Incoming",
+			"Nhận",
 			"/staff/deliveries/incoming",
 			faArrowRightToBracket
 		),
@@ -45,10 +45,10 @@ export default function Menu() {
 	return (
 		<ul className="menu w-full rounded-box">
 			<div className="btn bg-base-0 w-100">
-			<MenuItem label="Dashboard" path="/staff" /></div>
-			<SubMenu label="Orders">{orderItems}</SubMenu>
-			<SubMenu label="Deliveries">{deliveryItems}</SubMenu>
-			<SubMenu label="Management">{managementItems}</SubMenu>
+			<MenuItem label="Thống Kê" path="/staff" /></div>
+			<SubMenu label="Đơn Hàng">{orderItems}</SubMenu>
+			<SubMenu label="Vận Chuyển">{deliveryItems}</SubMenu>
+			<SubMenu label="Quản Lý">{managementItems}</SubMenu>
 		</ul>
 	);
 }

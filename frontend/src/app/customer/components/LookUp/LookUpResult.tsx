@@ -33,7 +33,7 @@ export default function LookupResult({ orderId }: { orderId: string }) {
 
 	if (order)
 		return (
-			<div className="flex flex-col gap-4 bg-base-300 p-6  rounded-md w-full items-center">
+			<div className="flex flex-col gap-4 bg-base-400 p-6  rounded-md w-full items-center">
 				<h3 className="text-custom-white font-bold">Order {order.id}</h3>
 				<div className="text-custom-white w-fit grid grid-cols-2 gap-x-12">
 					<div className="flex flex-row justify-between gap-2">
